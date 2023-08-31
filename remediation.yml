@@ -4,11 +4,12 @@
   gather_facts: no
   vars:
     relative_time: "day"
+    commentuser: "Nott"
 
   tasks:
     - name: push comment to dynatrace
       uri:
-        url: "{{dtcommentapiurl}}"
+        url: "{{ problemUrl }}"
         method: POST
         body_format: json
         body: '{ "comment": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
@@ -28,7 +29,7 @@
     
     - name: push comment to dynatrace
       uri:
-        url: "{{ dtcommentapiurl }}"
+        url: "{{ problemUrl }}"
         method: POST
         body_format: json
         body: '{"comment": "Disk remediation successful.", "user" "{{commentuser}}", "context": "Ansible Tower"}'
