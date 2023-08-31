@@ -8,7 +8,7 @@
 
   tasks:
     - name: push comment to dynatrace
-      url:
+      uri:
         url: "{{ problemUrl }}"
         method: POST
         body_format: json
@@ -28,7 +28,7 @@
     - debug: msg="{{ result.stdout }}"
     
     - name: push comment to dynatrace
-      url:
+      uri:
         url: "{{ problemUrl }}"
         method: POST
         body_format: json
