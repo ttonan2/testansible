@@ -1,6 +1,6 @@
 ---
 - name: disk remediation playbook
-  hosts: disk_remediation_host
+  hosts: all
   gather_facts: no
   vars:
     relative_time: "day"
