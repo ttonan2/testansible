@@ -12,7 +12,7 @@
         url: "{{ problemUrl }}"
         method: POST
         body_format: json
-        body: '{ "comment": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
+        body: '{ "message": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
       when: state is defined and state == "OPEN"
     
     - name: cleaning application
