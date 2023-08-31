@@ -13,7 +13,7 @@
         method: POST
         body_format: json
         body: '{ "comment": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
-        when: state is defined and state == "OPEN"
+      when: state is defined and state == "OPEN"
     
     - name: cleaning application
       debug:
@@ -33,4 +33,4 @@
         method: POST
         body_format: json
         body: '{"comment": "Disk remediation successful.", "user" "{{commentuser}}", "context": "Ansible Tower"}'
-        when: state is defined and state == "OPEN"
+      when: state is defined and state == "OPEN"
