@@ -9,7 +9,7 @@
   tasks:
     - name: push comment to dynatrace
       uri:
-        url: "{{ problemUrl }}"
+        url: "{{ problemUrl }}/comments"
         method: POST
         body_format: json
         body: '{ "message": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
