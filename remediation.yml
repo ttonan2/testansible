@@ -9,15 +9,15 @@
   tasks:
     - name: push comment to dynatrace
       uri:
-        url: "{{ problemUrl }}/comments"
+        url: "{{ problemUrl }}"
         method: POST
         body_format: json
-        body: '{ "message": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
+        body: '{ "comment": "Disk remediation playbook started.", "{{commentuser}}", "context": "Ansible Tower" }'
       when: state is defined and state == "OPEN"
     
     - name: cleaning application
       debug:
-        msg: "{{ problemUrl }}/v2"
+        msg: "{{ problemUrl }}"
     - name: "Cleaning files"
       become: true
       become_user: root
