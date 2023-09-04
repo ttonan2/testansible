@@ -18,12 +18,12 @@
     - name: cleaning application
       debug:
         msg: "{{ problemUrl }}"
-    - name: "Cleaning files"
+    - name: "Delete file(s)"
       become: true
       become_user: root
-      shell: |
-       # chmod +rx /home/dtu_training/ansible/roles/app-disk-filler/files/disk-cleaner.sh
-       # /home/dtu_training/ansible/roles/app-disk-filler/files/disk-cleaner.sh /home/dtu_training/storage
+      file:
+        path: /home/ubuntu/testdisk/abc.text
+        state: absent
       register: result
     - debug: msg="{{ result.stdout }}"
     
